@@ -27,6 +27,7 @@ module.exports = () => {
       console.log("args", args);
       console.log("fs.existsSync(netlifyCacheDir)", fs.existsSync(netlifyCacheDir), netlifyCacheDir)
       console.log("fs.existsSync(netlifyPublicDir)", fs.existsSync(netlifyPublicDir), netlifyPublicDir)
+      console.log("process.env", process.env)
       
       if (!fs.existsSync(netlifyCacheDir) || !fs.existsSync(netlifyPublicDir)) {
         console.log("No Gatsby cache found. Building fresh...");
