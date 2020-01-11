@@ -61,6 +61,8 @@ module.exports = () => {
       ])
         .then(() => {
           console.log("Stored the Gatsby cache to speed up future builds.");
+          console.log("fs.existsSync(netlifyCacheDir)", fs.existsSync(netlifyCacheDir), netlifyCacheDir)
+          console.log("fs.existsSync(netlifyPublicDir)", fs.existsSync(netlifyPublicDir), netlifyPublicDir)
         })
         .catch(error => {
           console.error(error.message);
