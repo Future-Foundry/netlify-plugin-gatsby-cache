@@ -25,6 +25,16 @@ module.exports = () => {
       } = getNetlifyCacheDirs(args);
 
       console.log("args", args);
+      console.log("fs.existsSync(cacheDir)", fs.existsSync(cacheDir), cacheDir)
+      if (fs.existsSync(cacheDir)) {
+        fs.readdir(cacheDir, function(err, items) {
+          console.log(items);
+       
+          for (var i=0; i<items.length; i++) {
+              console.log(items[i]);
+          }
+        });
+      }
       console.log("fs.existsSync(netlifyCacheDir)", fs.existsSync(netlifyCacheDir), netlifyCacheDir)
       console.log("fs.existsSync(netlifyPublicDir)", fs.existsSync(netlifyPublicDir), netlifyPublicDir)
       console.log("process.env", process.env)
