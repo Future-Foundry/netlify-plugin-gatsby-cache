@@ -30,10 +30,10 @@ module.exports = () => {
       console.log("fs.existsSync(cacheDir)", fs.existsSync(cacheDir), cacheDir)
       if (fs.existsSync(cacheDir)) {
         fs.readdir(cacheDir, function(err, items) {
-          console.log(items);
+          console.log("items", items);
        
           for (var i=0; i<items.length; i++) {
-              console.log(items[i]);
+              console.log("items[i]", i, items[i]);
           }
         });
       }
