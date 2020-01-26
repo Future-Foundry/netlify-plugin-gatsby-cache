@@ -6,6 +6,7 @@ const getNetlifyCacheDirs = ({ config, constants }) => {
   const gatsbyDir = path.dirname(config.build.publish);
 
   return {
+    cacheDir,
     gatsbyCacheDir: path.join(gatsbyDir, ".cache"),
     gatsbyPublicDir: path.join(gatsbyDir, "public"),
     netlifyCacheDir: path.join(cacheDir, "gatsby/.cache"),
@@ -18,6 +19,7 @@ module.exports = () => {
     name: "netlify-plugin-gatsby-cache",
     onPreBuild: async args => {
       const {
+        cacheDir,
         gatsbyCacheDir,
         gatsbyPublicDir,
         netlifyCacheDir,
